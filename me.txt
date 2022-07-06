@@ -22,4 +22,5 @@ Variable & Data Type
         /* 
             ABC DEF
         */
+    Global
     
