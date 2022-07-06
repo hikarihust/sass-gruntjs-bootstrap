@@ -29,4 +29,5 @@ Variable & Data Type
 Control Directive & Expressions
     IF
     For
+    While
     
