@@ -31,4 +31,6 @@ Control Directive & Expressions
     For
     While
     Each
+Function
+    Create & Use
     
