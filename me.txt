@@ -30,4 +30,5 @@ Control Directive & Expressions
     IF
     For
     While
+    Each
     
