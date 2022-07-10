@@ -1,0 +1,4 @@
+a, #fake-links .link {
+  color: blue; }
+  a:hover, #fake-links .link:hover {
+    text-decoration: underline; }
