@@ -51,4 +51,6 @@ Xây dựng giao diện danh sách hình ảnh
     Prepare
         https://placeholder.com/
         https://via.placeholder.com/500
+    Clearfix
+        sass Clearfix
     
