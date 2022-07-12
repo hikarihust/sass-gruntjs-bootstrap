@@ -53,4 +53,9 @@ Xây dựng giao diện danh sách hình ảnh
         https://via.placeholder.com/500
     Clearfix
         sass Clearfix
+    SetWidth
+        Hiển thị 5 hình ảnh trên 1 dòng. Các hình ảnh cách nhau 1%(margin right: 1%)
+        A + 1% + A + 1% + A + 1% + A + 1% + A
+        5A + 4% = 100%
+        -> A=19.2%
     
