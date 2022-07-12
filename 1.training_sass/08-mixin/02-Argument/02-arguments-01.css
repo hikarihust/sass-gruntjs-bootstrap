@@ -1,0 +1,9 @@
+p {
+  border-color: blue;
+  border-width: 5px;
+  border-style: dashed; }
+
+h3 {
+  border-color: red;
+  border-width: 3px;
+  border-style: solid; }
