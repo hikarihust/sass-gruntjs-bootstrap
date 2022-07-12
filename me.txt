@@ -47,4 +47,8 @@ Xây dựng giao diện Button
     Button 1
     Button 2
     Button 3
+Xây dựng giao diện danh sách hình ảnh
+    Prepare
+        https://placeholder.com/
+        https://via.placeholder.com/500
     
