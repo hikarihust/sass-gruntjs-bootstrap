@@ -86,4 +86,11 @@ GruntJS - Set up Enviroments
             grunt taskName
             grunt -> task default sẽ được thực hiện
     Create Project 2
+Plugin Minify CSS
+    Cssmin
+        https://gruntjs.com/plugins
+        Name: grunt-contrib-cssmin
+        npm install grunt-contrib-cssmin --save-dev
+        Combine two files into one output file
+        Minify all contents of a release directory and add a .min.css extension
     
