@@ -1,0 +1,6 @@
+{
+    "name": "project_2",
+    "devDependencies": {
+        "grunt": "^1.5.3"
+    }
+}
