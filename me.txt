@@ -67,4 +67,13 @@ Xây dựng giao diện lưới & media
     Cell-x
         box-sizing: border-box
     Media
+
+==============================================================================================================
+
+                            Sử dụng GruntJS và các plugin thông dụng
+        
+https://gruntjs.com/
+GruntJS - Set up Enviroments
+    Install
+        npm install -g grunt-cli
     
