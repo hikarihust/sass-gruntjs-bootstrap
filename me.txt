@@ -104,4 +104,6 @@ Plugin Uglify
 Plugin SASS
     Dịch từ sass sang css 
     Plugin name: grunt-contrib-sass
+Plugin watch
+    npm install grunt-contrib-watch --save-dev
     

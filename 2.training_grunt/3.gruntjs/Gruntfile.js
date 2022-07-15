@@ -72,6 +72,22 @@ module.exports = function(grunt) {
             }
 		},
 
+		// WATCH
+		watch: {
+			scripts: {
+				files: [
+					'<%= dirs.inputSCSS %>/*.scss'
+				],
+				tasks: [
+					'sass',
+					'cssmin'
+				],
+				options: {
+					spawn: false
+				},
+			},
+		},
+
     });
   
     // 02 Load plugin
@@ -79,8 +95,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
     // 03 Register task
-    grunt.registerTask('default', ['cssmin']);
+    grunt.registerTask('default', ['watch']);
     grunt.registerTask('abc', ['cssmin', 'concat', 'uglify', 'sass']);
   };
