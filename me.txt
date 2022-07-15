@@ -97,4 +97,8 @@ Plugin Concat
     Nối các tập tin lại với nhau
     https://www.npmjs.com/package/grunt-contrib-concat
     npm install grunt-contrib-concat --save-dev
+Plugin Uglify
+    Nén các tập tin javascript
+    npm install grunt-contrib-uglify --save-dev
+    Turn off console warnings
     

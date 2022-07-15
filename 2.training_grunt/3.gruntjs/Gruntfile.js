@@ -43,13 +43,29 @@ module.exports = function(grunt) {
             },
         },
 
+        // Uglify
+		uglify: {
+			options: {
+				beautify: false,
+				compress: {
+					drop_console: true
+				}
+			},
+			my_target: {
+		  		files: {
+		    		'<%= dirs.outputJS %>/case-03.min.js': ['<%= dirs.inputJS %>/case-03.js']
+		  		}
+			}
+        },
+
     });
   
     // 02 Load plugin
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
 
     // 03 Register task
     grunt.registerTask('default', ['cssmin']);
-    grunt.registerTask('abc', ['cssmin', 'concat']);
+    grunt.registerTask('abc', ['cssmin', 'concat', 'uglify']);
   };
