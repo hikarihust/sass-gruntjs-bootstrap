@@ -9,6 +9,7 @@ module.exports = function(grunt) {
 			outputCSS	: 'production/css',
             inputJS		: 'development/js',
             outputJS	: 'production/js',
+            inputSCSS	: 'development/scss',
 		},
 
         // CSSMin
@@ -58,14 +59,28 @@ module.exports = function(grunt) {
 			}
         },
 
+		// SASS
+		sass: {
+            dist: {
+                options: {
+                    sourcemap: 'none',
+                    style: 'expanded',
+                },
+                files: {
+                    '<%= dirs.outputCSS %>/result.css': '<%= dirs.inputSCSS %>/style-01.scss'
+                }
+            }
+		},
+
     });
   
     // 02 Load plugin
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-sass');
 
     // 03 Register task
     grunt.registerTask('default', ['cssmin']);
-    grunt.registerTask('abc', ['cssmin', 'concat', 'uglify']);
+    grunt.registerTask('abc', ['cssmin', 'concat', 'uglify', 'sass']);
   };

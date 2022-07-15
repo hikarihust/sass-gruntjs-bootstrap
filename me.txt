@@ -101,4 +101,7 @@ Plugin Uglify
     Nén các tập tin javascript
     npm install grunt-contrib-uglify --save-dev
     Turn off console warnings
+Plugin SASS
+    Dịch từ sass sang css 
+    Plugin name: grunt-contrib-sass
     
