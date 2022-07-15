@@ -7,6 +7,8 @@ module.exports = function(grunt) {
 		dirs: {
 			inputCSS	: 'development/css',
 			outputCSS	: 'production/css',
+            inputJS		: 'development/js',
+            outputJS	: 'production/js',
 		},
 
         // CSSMin
@@ -23,12 +25,31 @@ module.exports = function(grunt) {
                 }]
             }
         },
+
+        // Concat
+        concat: {
+            options: {
+                separator: '\n',
+				stripBanners: false,
+      			banner: '/*! <%= mPkg.name %> - ' +
+       					'<%= grunt.template.today("yyyy-mm-dd") %> */' + '\n', 
+            },
+            dist: {
+				src: [
+					'<%= dirs.inputJS %>/case-01.js', 
+					'<%= dirs.inputJS %>/case-02.js', 
+				],
+				dest: '<%= dirs.outputJS %>/result.js',
+            },
+        },
+
     });
   
     // 02 Load plugin
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-concat');
 
     // 03 Register task
     grunt.registerTask('default', ['cssmin']);
-    grunt.registerTask('abc', ['cssmin']);
+    grunt.registerTask('abc', ['cssmin', 'concat']);
   };
