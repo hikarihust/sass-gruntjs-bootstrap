@@ -76,16 +76,30 @@ module.exports = function(grunt) {
 		watch: {
 			scripts: {
 				files: [
-					'<%= dirs.inputSCSS %>/*.scss'
+					'<%= dirs.inputSCSS %>/*.scss',
+                    'production/index.html',
 				],
 				tasks: [
 					'sass',
 					'cssmin'
 				],
 				options: {
-					spawn: false
+					spawn: false,
+                    livereload: true
 				},
 			},
+		},
+
+		// CONNECT
+		connect: {
+			server: {
+					options: {
+						hostname: 'localhost',
+						port: 3069,
+						base: 'production/',
+						livereload: true
+					}
+			}
 		},
 
     });
@@ -96,8 +110,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-connect');
 
     // 03 Register task
     grunt.registerTask('default', ['watch']);
     grunt.registerTask('abc', ['cssmin', 'concat', 'uglify', 'sass']);
+    grunt.registerTask('dev', ['connect', 'watch']);
   };
