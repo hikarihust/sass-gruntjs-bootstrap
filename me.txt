@@ -113,4 +113,8 @@ Plugin connect
         grunt.registerTask('dev', ['connect', 'watch']);
     Trong cả task watch và connect thì đều thiết lập option 
         livereload: true
+Plugin includes
+    Problem
+        Dùng để giải quyết vấn đề khi xây dựng 1 giao diện có mã html quá dài, khi đó có thể chia nhỏ ra để
+        phát triển
     

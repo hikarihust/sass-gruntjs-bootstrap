@@ -77,11 +77,13 @@ module.exports = function(grunt) {
 			scripts: {
 				files: [
 					'<%= dirs.inputSCSS %>/*.scss',
-                    'production/index.html',
+                    'development/index.html',
+                    'development/html/*.html'
 				],
 				tasks: [
 					'sass',
-					'cssmin'
+					'cssmin',
+					'includes'
 				],
 				options: {
 					spawn: false,
@@ -102,6 +104,22 @@ module.exports = function(grunt) {
 			}
 		},
 
+		// INCLUDES
+		includes: {
+			files: {
+				src: [
+					'development/index.html'
+				], // Source files 
+				dest: 'production/', // Destination directory 
+				flatten: true, 
+				cwd: '.',
+				options: {
+					silent: true,
+					banner: '<!-- I am a banner <% includes.files.dest %> -->'
+				}
+			}
+		},
+
     });
   
     // 02 Load plugin
@@ -111,9 +129,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-connect');
+    grunt.loadNpmTasks('grunt-includes');
 
     // 03 Register task
     grunt.registerTask('default', ['watch']);
     grunt.registerTask('abc', ['cssmin', 'concat', 'uglify', 'sass']);
-    grunt.registerTask('dev', ['connect', 'watch']);
+    grunt.registerTask('dev', ['includes', 'connect', 'watch']);
   };
