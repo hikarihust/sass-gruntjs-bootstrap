@@ -118,3 +118,28 @@ Plugin includes
         Dùng để giải quyết vấn đề khi xây dựng 1 giao diện có mã html quá dài, khi đó có thể chia nhỏ ra để
         phát triển
     
+==============================================================================================================
+
+                            Convert Template PSD use SASS, GruntJS & Bootstrap 3
+
+Project Structure
+    Cài đặt GruntJS: npm install grunt --save-dev
+    npm install -g grunt-cli
+    npm install -g npm
+    Cài đặt các plugin
+        connect: npm install grunt-contrib-connect --save-dev
+        cssmin: npm install grunt-contrib-cssmin --save-dev
+        uglify: npm install grunt-contrib-uglify --save-dev
+        watch: npm install grunt-contrib-watch --save-dev
+        includes: npm install grunt-includes --save-dev
+        sass:
+            npm install --save-dev node-sass grunt-sass
+            npm install --save-dev node-sass
+    Download bootstrap-3.3.7-dist
+    font-awesome-4.7.0
+        https://fontawesome.com/v4.7.0/
+    Download và tích hợp fontawesome, bootstrap vào trong project 
+    psd
+        Install
+        Ctrl + H: Hiển thị các đường gióng kích thước
+    
