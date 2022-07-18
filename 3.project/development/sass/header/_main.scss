@@ -1,3 +1,5 @@
 header {
-    background: blue;
+	background-color: $header-color-background;
+    padding: 4% 0;
+    @import "header-logo";
 }
