@@ -1,0 +1,35 @@
+nav.header-menu {
+	%menu-active-or-hover {
+		background: #62A29E;
+		@include setBorderRadius(5px);
+		@include setBoxShadowBottom(-4px, #47817E);
+	}
+
+	ul li {
+        display: inline-block;
+		a {
+			text-transform: uppercase;
+			display: block;
+		}
+	}
+
+    ul.menu {
+        > li {
+			> a {
+                @include setFont(16px, $color-white, bold );
+                padding: 10px 24px;
+			}
+
+			&.activate, &:hover {
+				> a {
+                    @extend %menu-active-or-hover;
+				}
+            }
+        }
+    }
+
+    // Menu Level 2
+    ul.sub-menu, ul.sub-sub-menu {
+        display: none;
+    }
+}
