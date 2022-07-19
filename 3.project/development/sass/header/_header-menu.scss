@@ -5,7 +5,15 @@ nav.header-menu {
 		@include setBoxShadowBottom(-4px, #47817E);
 	}
 
+	%sub-menu-active-or-hover {
+		background: #f0f0f0;
+		border-left: 3px solid #62A29E;
+		color: #797979;
+    }
+
 	ul li {
+        list-style: none;
+        position: relative;
         display: inline-block;
 		a {
 			text-transform: uppercase;
@@ -13,6 +21,7 @@ nav.header-menu {
 		}
 	}
 
+	// Menu Level 1
     ul.menu {
         > li {
 			> a {
@@ -25,11 +34,35 @@ nav.header-menu {
                     @extend %menu-active-or-hover;
 				}
             }
+
+			&:hover {
+				ul.sub-menu {
+					display: block;
+				}
+			}
         }
     }
 
     // Menu Level 2
     ul.sub-menu, ul.sub-sub-menu {
         display: none;
+        position: absolute;
+		top: 42px;
+		left: 0px;
+        > li {
+            width: 155px;
+            > a {
+                @include setFont(13px, $color-white); 
+				border-left: 3px solid #C03C35;
+				background: #E2534B;
+                padding: 10px 20px;
+            }
+
+			&:hover {
+				> a {
+					@extend %sub-menu-active-or-hover;
+				}
+			}
+        }
     }
 }
