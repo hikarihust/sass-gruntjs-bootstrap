@@ -15,6 +15,7 @@ nav.header-menu {
         list-style: none;
         position: relative;
         display: inline-block;
+		z-index: 100;
 		a {
 			text-transform: uppercase;
 			display: block;
@@ -62,7 +63,17 @@ nav.header-menu {
 				> a {
 					@extend %sub-menu-active-or-hover;
 				}
+
+				> ul.sub-sub-menu { 
+					display: block;
+				}
 			}
         }
+    }
+
+    // Menu Level 3
+    ul.sub-sub-menu {
+		top: 0px;
+		left: 155px;
     }
 }
