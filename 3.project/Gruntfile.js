@@ -32,6 +32,7 @@ module.exports = function(grunt) {
 			},
 			my_target: {
 		  		files: {
+					'<%= dirs.outputJS %>/menu.js': ['<%= dirs.inputJS %>/menu.js']
 		  		}
 			}
         },
@@ -55,6 +56,7 @@ module.exports = function(grunt) {
 				files: [
 					'<%= dirs.inputSCSS %>/*.scss',				// development/sass/*.scss
                     '<%= dirs.inputSCSS %>/*/*.scss',			// development/sass/*/*.scss
+					'<%= dirs.inputJS %>/*.js',
                     'development/index.html',
                     '<%= dirs.inputHTMLELements %>/*.html',		// development/html-elements/*.html
 				],
@@ -116,6 +118,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('dev', [
 		'includes',
 		'sass',
+		'uglify',
 		'connect',
 		'watch',
     ]);

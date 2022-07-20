@@ -102,3 +102,111 @@ header nav.header-menu ul.sub-sub-menu {
   top: 0px;
   left: 155px;
 }
+header a.mobile-menu {
+  display: none;
+  width: 100%;
+  padding: 12px;
+  background: #528B86;
+  color: #ffffff;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+header a.mobile-menu:hover {
+  background: #447F7A;
+}
+
+/* ======================== DEVICES ======================== */
+/* 	================================================================================
+	LARGE DEVICES 
+	Large Desktops 1200px and Up (>1200) 
+	================================================================================ */
+/* 	================================================================================
+	MEDIUM DEVICES
+	Desktops 992px and Up (>992px & <1200px)
+	================================================================================ */
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  header nav.header-menu ul.menu > li > a {
+    padding: 10px 18px;
+  }
+}
+/* 	================================================================================
+	SMALL DEVICES
+	Tablets 768px and Up (>768px & <992px)
+	================================================================================ */
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  header nav.header-menu ul.menu > li > a {
+    padding: 8px 14px;
+  }
+
+  header {
+    text-align: center;
+  }
+  header div.header-logo {
+    float: none !important;
+    margin-bottom: 10px;
+  }
+  header nav.header-menu {
+    float: none !important;
+  }
+}
+/* 	================================================================================
+	EXTRA SMALL
+	(>425px & <768px)
+	================================================================================ */
+@media screen and (min-width: 425px) and (max-width: 768px) {
+  header nav.header-menu ul.menu > li > a {
+    padding: 8px 18px;
+  }
+
+  header {
+    text-align: center;
+  }
+  header div.header-logo {
+    float: none !important;
+    margin-bottom: 10px;
+  }
+  header nav.header-menu {
+    float: none !important;
+  }
+}
+/* 	================================================================================
+	MOBILE SIZE
+	Phones Less than 425px
+	(<425px)
+	================================================================================ */
+@media screen and (max-width: 425px) {
+  header div.header-logo, header nav.header-menu {
+    float: none !important;
+  }
+  header nav.header-menu ul.menu {
+    display: none;
+  }
+  header nav.header-menu ul.menu > li {
+    display: block;
+    width: 100%;
+  }
+  header nav.header-menu ul.menu > li a {
+    background: #ffffff !important;
+    color: #797979 !important;
+    border-top: 1px solid #e0e0e0 !important;
+  }
+  header nav.header-menu ul.menu > li:hover a, header nav.header-menu ul.menu > li.activate a {
+    background: #f0f0f0 !important;
+    box-shadow: inset 0px 0px 0px 0px #47817E !important;
+    -webkit-box-shadow: inset 0px 0px 0px 0px #47817E !important;
+    -moz-box-shadow: inset 0px 0px 0px 0px #47817E !important;
+    -o-box-shadow: inset 0px 0px 0px 0px #47817E !important;
+    border-radius: 0px !important;
+    -webkit-border-radius: 0px !important;
+    -moz-border-radius: 0px !important;
+    -o-border-radius: 0px !important;
+  }
+  header nav.header-menu ul.menu > li ul {
+    display: none;
+  }
+
+  a.mobile-menu {
+    display: block !important;
+    margin-top: 20px;
+  }
+}

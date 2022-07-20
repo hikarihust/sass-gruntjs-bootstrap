@@ -154,4 +154,11 @@ Xây dựng giao diện Header
         https://html-css-js.com/css/generator/box-shadow/
     Sub Menu
     Sub sub Menu
+    Responsive
+        https://getbootstrap.com/docs/3.4/css/
+        Large devices Desktops (≥1200px)
+        Medium devices Desktops (≥992px)
+        Small devices Tablets (≥768px)
+        Extra small devices Phones (<768px)
+        After click e.preventDefault();
     
