@@ -162,4 +162,5 @@ Xây dựng giao diện Header
         Extra small devices Phones (<768px)
         After click e.preventDefault();
 Xây dựng giao diện Breadcrumb
+Xây dựng giao diện Article
     
