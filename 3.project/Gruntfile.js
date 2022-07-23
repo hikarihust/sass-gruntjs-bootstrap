@@ -5,9 +5,11 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
 
 		dirs: {
+			input		: 'development',
 			inputSCSS	: 'development/sass',
             inputJS		: 'development/js',
             inputHTMLELements	: 'development/html-elements',
+			output		: 'production',
 			outputCSS	: 'production/css',
             outputJS	: 'production/js',
 		},
@@ -62,12 +64,13 @@ module.exports = function(grunt) {
 					'<%= dirs.inputSCSS %>/*.scss',				// development/sass/*.scss
                     '<%= dirs.inputSCSS %>/*/*.scss',			// development/sass/*/*.scss
 					'<%= dirs.inputJS %>/*.js',
-                    'development/index.html',
+                    '<%= dirs.input %>/index.html',
                     '<%= dirs.inputHTMLELements %>/*.html',		// development/html-elements/*.html
 				],
 				tasks: [
 					'sass',
-					'includes'
+					'includes',
+					'uglify'
 				],
 				options: {
 					spawn: false,
@@ -82,7 +85,7 @@ module.exports = function(grunt) {
 					options: {
 						hostname: 'localhost',
 						port: 3069,
-						base: 'production/',
+						base: '<%= dirs.output %>/',
 						livereload: true
 					}
 			}
@@ -92,9 +95,9 @@ module.exports = function(grunt) {
 		includes: {
 			files: {
 				src: [
-					'development/index.html'
+					'<%= dirs.input %>/index.html'
 				], // Source files 
-				dest: 'production/', // Destination directory 
+				dest: '<%= dirs.output %>/', // Destination directory 
 				flatten: true, 
 				cwd: '.',
 				options: {
@@ -112,7 +115,7 @@ module.exports = function(grunt) {
 					collapseWhitespace: true
 				},
 				files: {                                   // Dictionary of files
-					'production/index2.html': 'production/index.html',
+					'<%= dirs.output %>/index2.html': '<%= dirs.output %>/index.html',
 				}
 			}
 		}
