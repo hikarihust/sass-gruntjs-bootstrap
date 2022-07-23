@@ -17,8 +17,13 @@ module.exports = function(grunt) {
             options: {
             },
             target: {
-                files: [{
-                }]
+				files: [{
+					expand: true,
+					cwd: '<%= dirs.outputCSS %>',
+					src: ['main.css'],
+					dest: '<%= dirs.outputCSS %>',
+					ext: '.min.css'
+				  }]
             }
         },
 
@@ -32,7 +37,7 @@ module.exports = function(grunt) {
 			},
 			my_target: {
 		  		files: {
-					'<%= dirs.outputJS %>/menu.js': ['<%= dirs.inputJS %>/menu.js']
+					'<%= dirs.outputJS %>/menu.min.js': ['<%= dirs.inputJS %>/menu.js']
 		  		}
 			}
         },
@@ -118,6 +123,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('dev', [
 		'includes',
 		'sass',
+		'cssmin',
 		'uglify',
 		'connect',
 		'watch',
