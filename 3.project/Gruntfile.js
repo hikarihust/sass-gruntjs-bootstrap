@@ -104,6 +104,19 @@ module.exports = function(grunt) {
 			}
 		},
 
+		// HTML MIN
+		htmlmin: {                                     // Task
+			dist: {                                      // Target
+				options: {                                 // Target options
+					removeComments: false,
+					collapseWhitespace: true
+				},
+				files: {                                   // Dictionary of files
+					'production/index2.html': 'production/index.html',
+				}
+			}
+		}
+
     });
   
     // 02 Load plugin
@@ -113,6 +126,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-includes');
+	grunt.loadNpmTasks('grunt-contrib-htmlmin');
 
     // 03 Register task
 	grunt.registerTask('default', 'Log some stuff.', function() {
@@ -125,6 +139,7 @@ module.exports = function(grunt) {
 		'sass',
 		'cssmin',
 		'uglify',
+		'htmlmin',
 		'connect',
 		'watch',
     ]);
@@ -132,6 +147,7 @@ module.exports = function(grunt) {
 	// Task Publish Project
 	grunt.registerTask('publish', [
 		'cssmin',
-		'uglify'
+		'uglify',
+		'htmlmin'
 	]);
   };
